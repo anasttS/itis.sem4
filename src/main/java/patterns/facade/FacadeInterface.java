@@ -1,8 +1,8 @@
 package patterns.facade;
 
-import javafx.scene.Node;
+import patterns.Node;
 
 public interface FacadeInterface {
-    void readTree(Node node, String format);
+    Node readTree(String format);
     void writeTree(Node node, String format);
 }

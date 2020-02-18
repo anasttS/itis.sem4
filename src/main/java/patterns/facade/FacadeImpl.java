@@ -1,9 +1,12 @@
 package patterns.facade;
 
-import javafx.scene.Node;
+
+import patterns.Node;
+
+import java.io.File;
 
 public class FacadeImpl implements FacadeInterface {
-
+    File file = new File("file.txt");
     static FacadeImpl instance;
     JsonImpl json = new JsonImpl();
     XMLImpl xml = new XMLImpl();
@@ -20,22 +23,22 @@ public class FacadeImpl implements FacadeInterface {
 
     }
 
-
     @Override
-    public void readTree(Node node, String format) {
+    public Node readTree(String format) {
         if (format.equals("xml")){
-
+           return xml.read(file);
         } else if (format.equals("json")){
-
+            return json.read(file);
         }
+        return null;
     }
 
     @Override
-    public void writeTree(Node node, String format) {
+    public void writeTree(patterns.Node node, String format) {
         if (format.equals("xml")){
-
+            xml.write(node, file);
         } else if (format.equals("json")){
-
+            json.write(node, file);
         }
     }
 }

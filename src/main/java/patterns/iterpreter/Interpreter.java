@@ -1,6 +1,7 @@
 package patterns.iterpreter;
 
 import patterns.Type;
+import patterns.facade.FacadeImpl;
 import patterns.iterators.IteratorBFS;
 import patterns.Node;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 public class Interpreter {
 
+    // return children COUNTRY Russia
     public List<Node> returnChildren(IteratorBFS iteratorBFS, String str) {
         String[] arr = str.split(" ");
         String type = arr[2];
@@ -24,6 +26,7 @@ public class Interpreter {
         return children;
     }
 
+    // add Russia,Perm Kizelovskii DISTRICT 4
     public void addNode(IteratorBFS iteratorBFS, String str) {
         if (str.contains("add")) {
             String[] arr = str.split(" ");
@@ -78,12 +81,12 @@ public class Interpreter {
         }
     }
 
+    // delete Russia,Perm
     public void deleteNode(IteratorBFS iteratorBFS, String str) {
         String[] arr = str.split(",");
         String name = arr[arr.length - 1];
         Node res = null;
         Node next;
-
         while (iteratorBFS.hasNext()) {
             next = iteratorBFS.next();
             String nameStr = next.getName();
@@ -92,7 +95,6 @@ public class Interpreter {
                 break;
             }
         }
-
         Node root = null;
         if (res != null) {
             root = res.getRoot();
@@ -107,7 +109,26 @@ public class Interpreter {
         }
     }
 
+    //save json
     public void saveTree(IteratorBFS iteratorBFS, String str) {
+        String[] arr = str.split(" ");
+        String format = arr[1];
+        Node next;
+        while (iteratorBFS.hasNext()) {
+            next = iteratorBFS.next();
+            FacadeImpl.getInstance().writeTree(next, format);
+        }
+    }
 
+    //read json
+    public void readTree(String str) {
+        String[] arr = str.split(" ");
+        String format = arr[1];
+        Node next;
+        next = FacadeImpl.getInstance().readTree(format);
+        IteratorBFS iteratorBFS1 = new IteratorBFS(next);
+        while (iteratorBFS1.hasNext()) {
+            System.out.println(iteratorBFS1.next().getName());
+        }
     }
 }

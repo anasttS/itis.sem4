@@ -1,13 +1,25 @@
 package patterns;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@XmlRootElement(name = "root")
+@JsonIgnoreProperties(value = {"root"})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Node {
+    @XmlElement(name = "name")
     private String name;
+    @XmlTransient
     private Node root;
+    @XmlElement(name = "type")
     private Type type;
+    @XmlElement(name = "prioritet")
     private int prioritet;
+    @XmlElement(name = "children")
     private List<Node> children = new ArrayList<>();
 
     private Node() {

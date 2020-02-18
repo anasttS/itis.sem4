@@ -7,7 +7,7 @@ import patterns.iterpreter.Interpreter;
 
 import java.util.*;
 
-public class RussianTree {
+public class RussianTreeMain {
     public static void main(String[] args) {
 
         Node root = Node.newBuilder()
@@ -132,13 +132,11 @@ public class RussianTree {
 
         if (str.contains("save")){
             interpreter.saveTree(createIteratorBFS(root), str);
-            IteratorBFS iteratorBFS = createIteratorBFS(root);
-            while (iteratorBFS.hasNext()) {
-                System.out.println(iteratorBFS.next().getName());
-            }
-            createIteratorDFS(root);
         }
 
+        if (str.contains("read")){
+            interpreter.readTree(str);
+        }
 
 
     }
