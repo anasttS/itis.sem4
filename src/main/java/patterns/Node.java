@@ -13,7 +13,7 @@ public class Node {
     private Node() {
     }
 
-    void addChild(Node node) {
+    public void addChild(Node node) {
         children.add(node);
     }
 
@@ -40,7 +40,7 @@ public class Node {
     }
 
 
-    static Builder newBuilder() {
+    public static Builder newBuilder() {
         return new Node().new Builder();
     }
 

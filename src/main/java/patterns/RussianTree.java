@@ -1,6 +1,5 @@
 package patterns;
 
-import patterns.iterators.Tree;
 import patterns.iterators.IteratorBFS;
 import patterns.iterators.IteratorBFSPriority;
 import patterns.iterators.IteratorDFS;
@@ -8,7 +7,7 @@ import patterns.iterpreter.Interpreter;
 
 import java.util.*;
 
-public class RussianTree implements Tree {
+public class RussianTree {
     public static void main(String[] args) {
 
         Node root = Node.newBuilder()
@@ -31,14 +30,14 @@ public class RussianTree implements Tree {
                 .setPrioritet(2)
                 .build();
 
-        Node almetevskii =  Node.newBuilder()
+        Node almetevskii = Node.newBuilder()
                 .setName("Almetevskii")
                 .setRoot(tatarstan)
                 .setType(Type.DISTRICT)
                 .setPrioritet(5)
                 .build();
 
-        Node gubakhinskii =  Node.newBuilder()
+        Node gubakhinskii = Node.newBuilder()
                 .setName("Gubakhinskii")
                 .setRoot(perm)
                 .setType(Type.DISTRICT)
@@ -103,40 +102,56 @@ public class RussianTree implements Tree {
         druzhby.addChild(house2);
 
 
-        IteratorBFS iteratorBFS = new IteratorBFS(root);
-        while (iteratorBFS.hasNext()) {
-            System.out.println(iteratorBFS.next().getName());
-        }
-        iteratorBFS = new IteratorBFS(root);
-
-        IteratorDFS iteratorDFS = new IteratorDFS(root);
-        while (iteratorDFS.hasNext()) {
-            System.out.println(iteratorDFS.next().getName());
-        }
-
-        IteratorBFSPriority iteratorBFSPriority = new IteratorBFSPriority(root);
-        while (iteratorBFSPriority.hasNext()) {
-            System.out.println(iteratorBFSPriority.next().getName());
-        }
-
         Interpreter interpreter = new Interpreter();
-        List<Node> result = interpreter.returnChildren(iteratorBFS);
-        for (Node aResult : Objects.requireNonNull(result)) {
-            System.out.println(aResult.getName());
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        if (str.contains("return children")) {
+            List<Node> result = interpreter.returnChildren(createIteratorBFS(root), str);
+            for (Node aResult : result) {
+                System.out.println(aResult.getName());
+            }
+        }
+
+        if (str.contains("add")) {
+            interpreter.addNode(createIteratorBFS(root), str);
+            IteratorBFS iteratorBFS = createIteratorBFS(root);
+            while (iteratorBFS.hasNext()) {
+                System.out.println(iteratorBFS.next().getName());
+            }
+            createIteratorDFS(root);
+        }
+
+        if (str.contains("delete")){
+            interpreter.deleteNode(createIteratorBFS(root), str);
+            IteratorBFS iteratorBFS = createIteratorBFS(root);
+            while (iteratorBFS.hasNext()) {
+                System.out.println(iteratorBFS.next().getName());
+            }
+            createIteratorDFS(root);
+        }
+
+        if (str.contains("save")){
+            interpreter.saveTree(createIteratorBFS(root), str);
+            IteratorBFS iteratorBFS = createIteratorBFS(root);
+            while (iteratorBFS.hasNext()) {
+                System.out.println(iteratorBFS.next().getName());
+            }
+            createIteratorDFS(root);
         }
 
 
+
     }
 
-    public IteratorBFS createIteratorBFS() {
-        return null;
+    public static IteratorBFS createIteratorBFS(Node root) {
+        return new IteratorBFS(root);
     }
 
-    public IteratorDFS createIteratorDFS() {
-        return null;
+    public static IteratorDFS createIteratorDFS(Node root) {
+        return new IteratorDFS(root);
     }
 
-    public IteratorBFSPriority createIteratorBFSPriority() {
-        return null;
+    public static IteratorBFSPriority createIteratorBFSPriority(Node root) {
+        return new IteratorBFSPriority(root);
     }
 }
