@@ -1,0 +1,217 @@
+{"name":"Russia","type":"COUNTRY","prioritet":1,"children":[{"name":"Tatarstan","type":"REGION","prioritet":1,"children":[{"name":"Almetevskii","type":"DISTRICT","prioritet":5,"children":[{"name":"Almetevsk","type":"CITY","prioritet":1,"children":[{"name":"Lenina","type":"STREET","prioritet":1,"children":[{"name":"149","type":"HOUSE","prioritet":149,"children":[]}]}]}]}]},{"name":"Perm","type":"REGION","prioritet":2,"children":[{"name":"Gubakhinskii","type":"DISTRICT","prioritet":10,"children":[{"name":"Gubakha","type":"CITY","prioritet":12,"children":[{"name":"Druzhby","type":"STREET","prioritet":6,"children":[{"name":"23","type":"HOUSE","prioritet":23,"children":[]}]}]}]}]}]}{"name":"Tatarstan","type":"REGION","prioritet":1,"children":[{"name":"Almetevskii","type":"DISTRICT","prioritet":5,"children":[{"name":"Almetevsk","type":"CITY","prioritet":1,"children":[{"name":"Lenina","type":"STREET","prioritet":1,"children":[{"name":"149","type":"HOUSE","prioritet":149,"children":[]}]}]}]}]}{"name":"Perm","type":"REGION","prioritet":2,"children":[{"name":"Gubakhinskii","type":"DISTRICT","prioritet":10,"children":[{"name":"Gubakha","type":"CITY","prioritet":12,"children":[{"name":"Druzhby","type":"STREET","prioritet":6,"children":[{"name":"23","type":"HOUSE","prioritet":23,"children":[]}]}]}]}]}{"name":"Almetevskii","type":"DISTRICT","prioritet":5,"children":[{"name":"Almetevsk","type":"CITY","prioritet":1,"children":[{"name":"Lenina","type":"STREET","prioritet":1,"children":[{"name":"149","type":"HOUSE","prioritet":149,"children":[]}]}]}]}{"name":"Gubakhinskii","type":"DISTRICT","prioritet":10,"children":[{"name":"Gubakha","type":"CITY","prioritet":12,"children":[{"name":"Druzhby","type":"STREET","prioritet":6,"children":[{"name":"23","type":"HOUSE","prioritet":23,"children":[]}]}]}]}{"name":"Almetevsk","type":"CITY","prioritet":1,"children":[{"name":"Lenina","type":"STREET","prioritet":1,"children":[{"name":"149","type":"HOUSE","prioritet":149,"children":[]}]}]}{"name":"Gubakha","type":"CITY","prioritet":12,"children":[{"name":"Druzhby","type":"STREET","prioritet":6,"children":[{"name":"23","type":"HOUSE","prioritet":23,"children":[]}]}]}{"name":"Lenina","type":"STREET","prioritet":1,"children":[{"name":"149","type":"HOUSE","prioritet":149,"children":[]}]}{"name":"Druzhby","type":"STREET","prioritet":6,"children":[{"name":"23","type":"HOUSE","prioritet":23,"children":[]}]}{"name":"149","type":"HOUSE","prioritet":149,"children":[]}{"name":"23","type":"HOUSE","prioritet":23,"children":[]}<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<root>
+    <name>Russia</name>
+    <type>COUNTRY</type>
+    <prioritet>1</prioritet>
+    <children>
+        <name>Tatarstan</name>
+        <type>REGION</type>
+        <prioritet>1</prioritet>
+        <children>
+            <name>Almetevskii</name>
+            <type>DISTRICT</type>
+            <prioritet>5</prioritet>
+            <children>
+                <name>Almetevsk</name>
+                <type>CITY</type>
+                <prioritet>1</prioritet>
+                <children>
+                    <name>Lenina</name>
+                    <type>STREET</type>
+                    <prioritet>1</prioritet>
+                    <children>
+                        <name>149</name>
+                        <type>HOUSE</type>
+                        <prioritet>149</prioritet>
+                    </children>
+                </children>
+            </children>
+        </children>
+    </children>
+    <children>
+        <name>Perm</name>
+        <type>REGION</type>
+        <prioritet>2</prioritet>
+        <children>
+            <name>Gubakhinskii</name>
+            <type>DISTRICT</type>
+            <prioritet>10</prioritet>
+            <children>
+                <name>Gubakha</name>
+                <type>CITY</type>
+                <prioritet>12</prioritet>
+                <children>
+                    <name>Druzhby</name>
+                    <type>STREET</type>
+                    <prioritet>6</prioritet>
+                    <children>
+                        <name>23</name>
+                        <type>HOUSE</type>
+                        <prioritet>23</prioritet>
+                    </children>
+                </children>
+            </children>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Tatarstan</name>
+    <type>REGION</type>
+    <prioritet>1</prioritet>
+    <children>
+        <name>Almetevskii</name>
+        <type>DISTRICT</type>
+        <prioritet>5</prioritet>
+        <children>
+            <name>Almetevsk</name>
+            <type>CITY</type>
+            <prioritet>1</prioritet>
+            <children>
+                <name>Lenina</name>
+                <type>STREET</type>
+                <prioritet>1</prioritet>
+                <children>
+                    <name>149</name>
+                    <type>HOUSE</type>
+                    <prioritet>149</prioritet>
+                </children>
+            </children>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Perm</name>
+    <type>REGION</type>
+    <prioritet>2</prioritet>
+    <children>
+        <name>Gubakhinskii</name>
+        <type>DISTRICT</type>
+        <prioritet>10</prioritet>
+        <children>
+            <name>Gubakha</name>
+            <type>CITY</type>
+            <prioritet>12</prioritet>
+            <children>
+                <name>Druzhby</name>
+                <type>STREET</type>
+                <prioritet>6</prioritet>
+                <children>
+                    <name>23</name>
+                    <type>HOUSE</type>
+                    <prioritet>23</prioritet>
+                </children>
+            </children>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Almetevskii</name>
+    <type>DISTRICT</type>
+    <prioritet>5</prioritet>
+    <children>
+        <name>Almetevsk</name>
+        <type>CITY</type>
+        <prioritet>1</prioritet>
+        <children>
+            <name>Lenina</name>
+            <type>STREET</type>
+            <prioritet>1</prioritet>
+            <children>
+                <name>149</name>
+                <type>HOUSE</type>
+                <prioritet>149</prioritet>
+            </children>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Gubakhinskii</name>
+    <type>DISTRICT</type>
+    <prioritet>10</prioritet>
+    <children>
+        <name>Gubakha</name>
+        <type>CITY</type>
+        <prioritet>12</prioritet>
+        <children>
+            <name>Druzhby</name>
+            <type>STREET</type>
+            <prioritet>6</prioritet>
+            <children>
+                <name>23</name>
+                <type>HOUSE</type>
+                <prioritet>23</prioritet>
+            </children>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Almetevsk</name>
+    <type>CITY</type>
+    <prioritet>1</prioritet>
+    <children>
+        <name>Lenina</name>
+        <type>STREET</type>
+        <prioritet>1</prioritet>
+        <children>
+            <name>149</name>
+            <type>HOUSE</type>
+            <prioritet>149</prioritet>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Gubakha</name>
+    <type>CITY</type>
+    <prioritet>12</prioritet>
+    <children>
+        <name>Druzhby</name>
+        <type>STREET</type>
+        <prioritet>6</prioritet>
+        <children>
+            <name>23</name>
+            <type>HOUSE</type>
+            <prioritet>23</prioritet>
+        </children>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Lenina</name>
+    <type>STREET</type>
+    <prioritet>1</prioritet>
+    <children>
+        <name>149</name>
+        <type>HOUSE</type>
+        <prioritet>149</prioritet>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>Druzhby</name>
+    <type>STREET</type>
+    <prioritet>6</prioritet>
+    <children>
+        <name>23</name>
+        <type>HOUSE</type>
+        <prioritet>23</prioritet>
+    </children>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>149</name>
+    <type>HOUSE</type>
+    <prioritet>149</prioritet>
+</root>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+    <name>23</name>
+    <type>HOUSE</type>
+    <prioritet>23</prioritet>
+</root>
