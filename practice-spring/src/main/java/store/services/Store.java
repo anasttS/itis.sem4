@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import store.model.Name;
 import store.repository.NameRepository;
 
-import java.util.Set;
+import java.util.List;
 
 @Component
 class Store {
@@ -13,11 +13,27 @@ class Store {
     @Autowired
     NameRepository nameRepository;
 
-    public Set<Name> out() {
-        return (Set<Name>)nameRepository.findAll();
+    public void out() {
+        List<Name> names = (List<Name>) nameRepository.findAll();
+        for (Name name: names) {
+            System.out.println(name);
+        }
     }
 
     public void add(Name name) {
         nameRepository.save(name);
     }
+
+    //    @Autowired
+//    private List<Name> names = new ArrayList<>();
+//
+//    void out(){
+//        for (Name name: names) {
+//            System.out.println(name);
+//        }
+//    }
+//
+//    void add(Name name){
+//        names.add(name);
+//    }
 }

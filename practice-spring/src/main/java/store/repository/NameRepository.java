@@ -1,7 +1,7 @@
 package store.repository;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import store.model.Name;
 
 

@@ -1,31 +1,28 @@
 package store.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+        import org.springframework.context.annotation.ComponentScan;
+        import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
+        import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
+        import org.springframework.jdbc.datasource.DriverManagerDataSource;
+        import org.springframework.orm.jpa.JpaTransactionManager;
+        import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+        import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+        import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.util.Objects;
+        import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(value = "store")
-@EnableJpaRepositories(basePackages = "store")
-@PropertySource("classpath:application.properties")
+@ComponentScan(basePackages = "store")
+@EnableJpaRepositories(basePackages = "store.repository")
+@EnableTransactionManagement
 public class Configs {
-
-    @Autowired
-    Environment environment;
 
     @Bean
     public PlatformTransactionManager transactionManager() {
@@ -41,7 +38,7 @@ public class Configs {
         vendorAdapter.setShowSql(Boolean.FALSE);
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("store");
+        factory.setPackagesToScan("store.model");
         factory.setDataSource(driverManagerDataSource());
         factory.afterPropertiesSet();
         factory.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
@@ -51,10 +48,10 @@ public class Configs {
     @Bean
     public DataSource driverManagerDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("db.driver")));
-        dataSource.setUrl(environment.getProperty("db.url"));
-        dataSource.setUsername(environment.getProperty("db.user"));
-        dataSource.setPassword(environment.getProperty("db.password"));
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/spring_app?useSSL=false&serverTimezone=Europe/Moscow");
+        dataSource.setUsername("root");
+        dataSource.setPassword("SteshaandMe1");
         return dataSource;
     }
 
